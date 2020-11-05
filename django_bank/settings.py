@@ -25,7 +25,7 @@ SECRET_KEY = '+(@nrj@bjdqeddjxch9%s0oni4j^t*6jw3v0q^%=60e%--s^i4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://django-bank.azurewebsites.net/']
+ALLOWED_HOSTS = ['django-bank.azurewebsites.net']
 
 # Application definition
 
