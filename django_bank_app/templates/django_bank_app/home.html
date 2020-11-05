@@ -1,4 +1,4 @@
-{% extends 'django_bank_app/base.html '%} {% load static %} 
+{% extends 'django_bank_app/base.html' %} {% load static %} 
 {% block content %} 
 
 {% if messages %} 
@@ -6,7 +6,6 @@
 {% for message in messages %}
 <p class="alert alert-{{ message.tags }} my-2">{{ message }}</p>
 {% endfor %} 
-ls
 
 {% endif %}
 <div class="home">
