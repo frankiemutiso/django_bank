@@ -1,0 +1,84 @@
+{% extends 'django_bank_app/base.html '%} {% load static %} {% block content %}
+
+
+{% if messages %} {% for message in messages %}
+<p class="alert alert-{{ message.tags }} my-4">{{ message }}</p>
+{% endfor %} {% endif %}
+<div class="row profile">
+  <div class="col-md-4 profile__left">
+    <div class="balance">
+      {% for account in accounts %}
+      <h6>Available Balance</h6>
+      <h5>Ksh.{{account.current_balance}}</h5>
+
+      {% endfor %}
+    </div>
+    <div class="account-summary">
+      <h6>Account Summary</h6>
+      <table class="table">
+        <tbody>
+          {% for account in accounts %}
+          <tr>
+            <td class="blue">Account Name</td>
+            <td>{{account.user}}</td>
+          </tr>
+          <tr>
+            <td class="blue">Account Number</td>
+            <td>{{account.id}}</td>
+          </tr>
+          <tr>
+            <td class="blue">Date Opened</td>
+            <td>{{account.date_opened|date:"M. j, Y"}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col-md-8 profile__right">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Transaction ID</th>
+          <th scope="col">Transaction Type</th>
+          <th scope="col">Transaction Date</th>
+          <th scope="col">Amount(Ksh)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for transaction in page_obj %}
+        <tr>
+          <th scope="row">{{transaction.id}}</th>
+          <td>{{transaction.transaction_type}}</td>
+          <td>{{transaction.transaction_date|date:"M. j, Y"}}</td>
+          <td>{{transaction.amount}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    
+    <div class="pagination">
+      <span class="step-links">
+          {% if page_obj.has_previous %}
+              <a class="btn btn-primary btn-sm" href="?page=1">&laquo; first</a>
+              <a class="btn btn-primary btn-sm" href="?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+
+          <span class="current">
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+          </span>
+
+          {% if page_obj.has_next %}
+              <a class="btn btn-primary btn-sm" href="?page={{ page_obj.next_page_number }}">next</a>
+              <a class="btn btn-primary btn-sm" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+      </span>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock content %}

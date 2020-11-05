@@ -1,0 +1,46 @@
+{% extends 'django_bank_app/base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block content %} 
+
+{% if messages %} 
+
+{% for message in messages %}
+  <p class="alert alert-{{message.tags}} my-4">{{ message }}</p>
+{% endfor %} 
+
+{% endif %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <fieldset>
+    <legend>Login</legend>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        required
+      />
+    </div>
+
+    <button class="btn btn-outline-primary mt-1" type="submit">Log In</button>
+  </fieldset>
+</form>
+<p class="text-muted mt-3">
+  Don't have a bank account? <a href="{% url 'register' %}">Open Account</a>
+</p>
+
+{% endblock content %}

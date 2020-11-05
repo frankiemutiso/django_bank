@@ -1,0 +1,18 @@
+{% extends 'django_bank_app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <fieldset>
+        <legend>
+            Register
+        </legend>
+
+        {{form|crispy}}
+        <button class="btn btn-outline-primary mt-1" type='submit'>Register</button>
+    </fieldset>
+
+</form>
+<p class="text-muted mt-3">Already have a bank account? <a href="{% url 'login' %}">Log In</a></p>
+{% endblock content %}

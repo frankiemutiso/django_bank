@@ -1,0 +1,30 @@
+{% extends 'django_bank_app/base.html '%} 
+{% load static %} 
+{% block content %}
+
+{% if messages %} {% for message in messages %}
+<p class="alert alert-{{ message.tags }} my-4">{{ message }}</p>
+{% endfor %} {% endif %}
+<div class="row transfer">
+  <div class="col-md-6 mb-5 transfer__left">
+    <h3>Tap and Go</h3>
+    <p>Seemless withdrawals are a click away! You are one tap away from financial freedom.</p>
+    <img src="{% static 'images/undraw_wallet_aym5.svg' %}" alt="">
+
+  </div>
+  <form class="col-md-6 mb-5" method="POST" action="{% url 'withdraw_process' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        placeholder="Amount To Withdraw"
+        name="withdraw"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Withdraw</button>
+  </form>
+</div>
+
+{% endblock content %}

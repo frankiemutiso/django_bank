@@ -1,0 +1,63 @@
+{% extends 'django_bank_app/base.html '%} 
+{% load static %} 
+
+{% block content %} 
+
+{% if messages %} 
+
+{% for message in messages %}
+<p class="alert alert-{{ message.tags }} my-4">{{ message }}</p>
+{% endfor %} 
+
+{% endif %}
+<div class="row transfer">
+  <div class="col-md-6 mb-5 transfer__left">
+    <h3>Instant ATM withdrawal</h3>
+    <p>
+      ATM withdrawals made easier.
+      <span class="bold">No more plastic cards</span> in your wallet.
+    </p>
+    <img
+      class="atm-withdrawal__img"
+      src="{% static 'images/undraw_Mobile_pay_re_sjb8.svg' %}"
+      alt=""
+    />
+  </div>
+  <form
+    class="col-md-6 mb-5"
+    method="POST"
+    action="{% url 'atm_withdrawal_process' %}"
+  >
+    {% csrf_token %}
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        placeholder="Enter ATM Code"
+        name="code"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control form-control-sm"
+        placeholder="Enter amount to withdraw"
+        name="amount"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control form-control-sm"
+        placeholder="Enter your password"
+        name="password"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm">Withdraw</button>
+  </form>
+</div>
+
+{% endblock content %}
