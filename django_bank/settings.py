@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '+(@nrj@bjdqeddjxch9%s0oni4j^t*6jw3v0q^%=60e%--s^i4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['django-bank.azurewebsites.net']
 
