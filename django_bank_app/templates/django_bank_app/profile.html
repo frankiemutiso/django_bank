@@ -1,9 +1,13 @@
-{% extends 'django_bank_app/base.html '%} {% load static %} {% block content %}
+{% extends 'django_bank_app/base.html '%} 
+{% load static %} 
+{% block content %}
 
 
-{% if messages %} {% for message in messages %}
+{% if messages %} 
+{% for message in messages %}
 <p class="alert alert-{{ message.tags }} my-4">{{ message }}</p>
-{% endfor %} {% endif %}
+{% endfor %} 
+{% endif %}
 <div class="row profile">
   <div class="col-md-4 profile__left">
     <div class="balance">

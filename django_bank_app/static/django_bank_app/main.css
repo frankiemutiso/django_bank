@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(to right, #89f5ff, #8acaff) ;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.routes > ul > li > a {
+  font-weight: 600;
+}
+
+.home__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.amount {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.amount > h5 {
+  color: #1a1c20;
+  margin-right: 20px;
+}
+
+.home {
+  margin-top: 50px;
+}
+
+.home h1 {
+  text-align: center;
+}
+
+.highlight {
+  color: rgb(64, 133, 230);
+}
+
+.showcase{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase__left{
+  display: flex;
+  justify-content: center;
+}
+
+.showcase__left > img{
+  width: 80%;
+  object-fit: contain;
+  margin-top: 50px;
+}
+
+
+.alert-error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  color: #975057;
+}
+
+.profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance {
+  display: flex;
+  background-color: #373a40;
+  color:white;
+  border-radius: 2px;
+  padding: 11px 10px 5px 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.balance h5 {
+  margin-left: 40px;
+  /* font-weight: 700; */
+}
+
+.account-summary > h6 {
+  margin: 0 0 17px 5px;
+  font-weight: 600;
+}
+
+.account-summary > table {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.account-summary > table > tbody > tr > td {
+  font-weight: 500;
+}
+
+.account-summary > table > tbody > tr > .blue {
+  color: #373a40;
+}
+
+.profile__right {
+  margin-bottom: 20px;
+}
+
+.profile__right > table{
+  background: white;
+  border-radius: 3px;
+}
+
+.transfer{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 50px 0px 50px;
+}
+
+.transfer__left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.transfer__left h3{
+  font-weight: 600;
+  color: #373a40;
+
+}
+
+.transfer__left > p{
+  width: 270px;
+  color: #464646;
+  margin-bottom: 20px;
+}
+
+.transfer__left .bold{
+  font-weight: 500;
+}
+
+.transfer__left > img{
+  width: 80%;
+  object-fit: contain;
+}
+
+.transfer > form{
+  flex: 1;
+  margin: 0 20px;
+}
+
+.atm-withdrawal__img{
+  width: 70%;
+  object-fit: contain;
+  margin-top: 20px;
+
+}
+
