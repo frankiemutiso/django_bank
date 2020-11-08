@@ -56,7 +56,7 @@ def login_view(request):
 
             if user is not None:
                 login(request, user)
-                messages.success(request, f'Welcome again {user}')
+                messages.success(request, f'Welcome back {user}')
                 return redirect('home')
             else:
                 messages.error(request, 'Username or password invalid!')
