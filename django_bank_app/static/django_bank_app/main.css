@@ -63,6 +63,9 @@ body {
   margin-top: 50px;
 }
 
+.showcase__right h1{
+  font-size: 1.2rem;
+}
 
 .alert-error {
   background: #f8d7da;
