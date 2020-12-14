@@ -4,6 +4,24 @@ from . import views
 
 
 urlpatterns = [
+    # urls handling api routing
+    path('customers/', views.CustomerList.as_view(), name='customer-list'),
+    path('customers/<int:pk>/', views.CustomerDetail.as_view(),
+         name='customer-detail'),
+    path('accounts/', views.AccountList.as_view(), name='account-list'),
+    path('accounts/<int:pk>/', views.AccountDetail.as_view(), name='account-detail'),
+    path('transactions/', views.TransactionList.as_view(), name='transaction-list'),
+    path('transactions/<int:pk>/', views.TransactionDetail.as_view(),
+         name='transaction-detail'),
+    path('atms/', views.ATMList.as_view(), name='atm-list'),
+    path('atms/<int:pk>/', views.ATMDetail.as_view(), name='atm-detail'),
+    path('atm-transactions/', views.ATMTransactionList.as_view(),
+         name='atm-transaction-list'),
+    path('atm-transactions/<int:pk>/',
+         views.ATMTransactionDetail.as_view(), name='atm-transaction-detail'),
+
+
+    # others
     path('', views.home, name='home'),
     path('profile/', views.profile, name='profile'),
     path('transfer/', views.transfer, name='transfer'),
