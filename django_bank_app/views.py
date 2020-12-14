@@ -10,6 +10,62 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from django.core.exceptions import ObjectDoesNotExist
 
+# important imports for creating api views
+from .serializers import *
+from rest_framework import generics
+
+# class based views for creating apis
+
+
+class CustomerList(generics.ListCreateAPIView):
+    queryset = Customer.objects.all()
+    serializer = CustomerSerializer
+
+
+class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Customer.objects.all()
+    serializer = CustomerSerializer
+
+
+class AccountList(generics.ListCreateAPIView):
+    queryset = Account.objects.all()
+    serializer = AccountSerializer
+
+
+class AccountDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Account.objects.all()
+    serializer = AccountSerializer
+
+
+class TransactionList(generics.ListCreateAPIView):
+    queryset = Transaction.objects.all()
+    serializer = TransactionSerializer
+
+
+class TransactionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Transaction.objects.all()
+    serializer = TransactionSerializer
+
+
+class ATMList(generics.ListCreateAPIView):
+    queryset = ATM.objects.all()
+    serializer = ATMSerializer
+
+
+class ATMDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ATM.objects.all()
+    serializer = ATMSerializer
+
+
+class ATMTransactionList(generics.ListCreateAPIView):
+    queryset = ATMTransaction.objects.all()
+    serializer = ATMTransactionSerializer
+
+
+class ATMTransactionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = ATMTransaction.objects.all()
+    serializer = ATMTransactionSerializer
+
 
 def register_view(request):
     if request.user.is_authenticated:
