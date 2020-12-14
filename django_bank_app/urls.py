@@ -5,6 +5,9 @@ from . import views
 
 urlpatterns = [
     # urls handling api routing
+    path('users/', views.UserList.as_view(), name='user-list'),
+    path('users/<int:pk>/', views.UserDetail.as_view(),
+         name='user-detail'),
     path('customers/', views.CustomerList.as_view(), name='customer-list'),
     path('customers/<int:pk>/', views.CustomerDetail.as_view(),
          name='customer-detail'),

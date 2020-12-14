@@ -17,54 +17,64 @@ from rest_framework import generics
 # class based views for creating apis
 
 
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
 class CustomerList(generics.ListCreateAPIView):
     queryset = Customer.objects.all()
-    serializer = CustomerSerializer
+    serializer_class = CustomerSerializer
 
 
 class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Customer.objects.all()
-    serializer = CustomerSerializer
+    serializer_class = CustomerSerializer
 
 
 class AccountList(generics.ListCreateAPIView):
     queryset = Account.objects.all()
-    serializer = AccountSerializer
+    serializer_class = AccountSerializer
 
 
 class AccountDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Account.objects.all()
-    serializer = AccountSerializer
+    serializer_class = AccountSerializer
 
 
 class TransactionList(generics.ListCreateAPIView):
     queryset = Transaction.objects.all()
-    serializer = TransactionSerializer
+    serializer_class = TransactionSerializer
 
 
 class TransactionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Transaction.objects.all()
-    serializer = TransactionSerializer
+    serializer_class = TransactionSerializer
 
 
 class ATMList(generics.ListCreateAPIView):
     queryset = ATM.objects.all()
-    serializer = ATMSerializer
+    serializer_class = ATMSerializer
 
 
 class ATMDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ATM.objects.all()
-    serializer = ATMSerializer
+    serializer_class = ATMSerializer
 
 
 class ATMTransactionList(generics.ListCreateAPIView):
     queryset = ATMTransaction.objects.all()
-    serializer = ATMTransactionSerializer
+    serializer_class = ATMTransactionSerializer
 
 
 class ATMTransactionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = ATMTransaction.objects.all()
-    serializer = ATMTransactionSerializer
+    serializer_class = ATMTransactionSerializer
 
 
 def register_view(request):
