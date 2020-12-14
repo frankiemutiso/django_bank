@@ -1,0 +1,28 @@
+.header {
+  background: #fff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.header__logo {
+  text-decoration: none;
+  font-size: 23px;
+  color: #ff4646;
+}
+
+.header > ul {
+  display: flex;
+  list-style: none;
+}
+
+.header ul > li {
+  margin: 0 10px;
+}
+
+.header > ul > li > a {
+  text-decoration: none;
+  color: #0f0f0f;
+}
