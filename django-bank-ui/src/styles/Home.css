@@ -1,0 +1,38 @@
+.home {
+  background-image: url("../images/home-alt-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+}
+
+.home__showcase {
+  width: 300px;
+  margin-left: 10rem;
+}
+
+.home__showcase > p {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.home__highlight {
+  font-weight: 600;
+}
+
+.home__btn {
+  outline: none;
+  border: none;
+  background: #16c79a;
+  color: #fff;
+  margin-top: 30px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+}

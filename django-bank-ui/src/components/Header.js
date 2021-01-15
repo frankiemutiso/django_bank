@@ -18,13 +18,13 @@ const Header = () => {
 
           <ul>
             <li>
-              <Link to="/withdraw">Withdraw</Link>
+              <Link to="/withdraw">withdraw</Link>
             </li>
             <li>
-              <Link to="/transfer">Transfer</Link>
+              <Link to="/transfer">transfer</Link>
             </li>
             <li>
-              <Link to="/atm-withdraw">ATM Transfer</Link>
+              <Link to="/atm-withdraw">atm transfer</Link>
             </li>
           </ul>
         </nav>

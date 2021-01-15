@@ -1,0 +1,35 @@
+.transfer {
+  background-color: #0d97ff;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.transfer__container {
+  margin: 0 50px;
+  display: flex;
+  align-items: center;
+}
+
+.transfer__left > h3{
+  font-size: 25px;
+}
+
+.transfer__left > img {
+  width: 400px;
+}
+
+.transfer__form {
+  margin-left: 30px;
+}
+
+.transfer__form > input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  padding: 6px 10px;
+}
+
+.transfer__btn {
+  font-weight: 400;
+}

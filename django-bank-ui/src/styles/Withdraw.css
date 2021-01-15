@@ -1,0 +1,35 @@
+.withdraw {
+  background-color: #0d97ff;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.withdraw__container {
+  margin: 0 50px;
+  display: flex;
+  align-items: center;
+}
+
+.withdraw__left > h3 {
+  font-size: 25px;
+}
+
+.withdraw__left > img {
+  width: 400px;
+}
+
+.withdraw__form {
+  margin-left: 30px;
+}
+
+.withdraw__form > input {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  padding: 6px 10px;
+}
+
+.withdraw__btn {
+  font-weight: 400;
+}
