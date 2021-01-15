@@ -25,9 +25,10 @@ urlpatterns = [
     # React JS entry point
     path('', TemplateView.as_view(template_name="index.html")),
 
-    # 
+    #
     path('api/', include('django_bank_app.urls')),
     path('admin/', admin.site.urls),
+    path('auth/', include('rest_framework.urls')),
 
     # simple jwt routes
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
