@@ -28,7 +28,7 @@ urlpatterns = [
     #
     path('api/', include('django_bank_app.urls')),
     path('admin/', admin.site.urls),
-    path('auth/', include('rest_framework.urls')),
+    # path('auth/', include('rest_framework.urls')),
 
     # simple jwt routes
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
