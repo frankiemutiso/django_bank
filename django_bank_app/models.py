@@ -2,27 +2,22 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from decimal import Decimal
-import uuid
 
 
 class Customer(models.Model):
-    GENDER = (('Male', 'Male'), ('Female', 'Female'))
-
     customer = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100, null=True, blank=True)
-    last_name = models.CharField(max_length=100, null=True, blank=True)
-    email = models.EmailField(max_length=254,  null=True, blank=True)
-    gender = models.CharField(
-        max_length=50, choices=GENDER, null=True, blank=True)
+    name = models.CharField(max_length=100, null=True, blank=True)
+    email = models.EmailField(
+        max_length=254,  null=True, blank=True, unique=True)
     city = models.CharField(max_length=50, null=True, blank=True)
-    national_ID = models.IntegerField(null=True, blank=True)
+    phone_number = models.IntegerField(null=True, blank=True, unique=True)
 
     def __str__(self):
-        return f'{self.customer.first_name} {self.customer.last_name}'
+        return f'{self.name}'
 
 
 class Account(models.Model):
-    user = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    owner = models.ForeignKey(Customer, on_delete=models.CASCADE)
     date_opened = models.DateTimeField(default=timezone.now)
     previous_balance = models.DecimalField(
         max_digits=8, decimal_places=2, default=0)
