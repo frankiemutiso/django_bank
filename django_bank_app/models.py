@@ -27,22 +27,6 @@ class Account(models.Model):
     def __str__(self):
         return str(self.id)
 
-    def get_balance(self, amount, code):
-        amount = Decimal(amount)
-        previous_balance = self.previous_balance
-        current_balance = self.current_balance
-
-        if code == 1:
-            if previous_balance > amount:
-                current_balance = previous_balance - amount
-                return current_balance
-            else:
-                return -1
-
-        else:
-            current_balance = previous_balance + amount
-            return current_balance
-
 
 class Transaction(models.Model):
     TRANSACTION_TYPES = (
@@ -70,18 +54,6 @@ class ATM(models.Model):
 
     def __str__(self):
         return str(self.id)
-
-    def get_balance(self, amount, code):
-        amount = Decimal(amount)
-        previous_balance = self.previous_balance
-        current_balance = self.current_balance
-
-        if code == 1:
-            if previous_balance > amount:
-                current_balance = current_balance - amount
-                return current_balance
-            else:
-                return -1
 
 
 class ATMTransaction(models.Model):
