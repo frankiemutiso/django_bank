@@ -80,7 +80,7 @@ celerybeat-schedule
 *.sage.py
 
 # dotenv
-.env
+django_bank/.env
 
 # virtualenv
 .venv
